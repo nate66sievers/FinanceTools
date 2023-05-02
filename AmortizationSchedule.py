@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 
 # Define loan parameters
-loan_amount = 1000000
+loan_amount = 275000
 down_payment = 0.05*loan_amount
 loan_term = 30 # in years
-interest_rate = 0.07 # 6% expressed as decimal
+interest_rate = 0.07 # Interest Rate
 
 # Calculate monthly payment
 num_payments = loan_term * 12
@@ -22,7 +22,6 @@ for i in range(num_payments):
     payments.append((i+1, principal_payment, interest_payment, balance))
 
 # Print amortization schedule
-# print("Payment\tPrincipal\tInterest\tBalance")
 int_total = 0
 for payment in payments:
     # print("{}\t${:,.2f}\t${:,.2f}\t${:,.2f}".format(payment[0], payment[1], payment[2], payment[3]))
@@ -31,6 +30,7 @@ for payment in payments:
 
 print("Monthly payment: ${:,.2f}".format(monthly_payment))
 print("Total Intrest: ${:,.2f}".format(int_total))
-
+print("Total Payment: ${:,.2f}".format(int_total+loan_amount))
+print()
 
 
